@@ -1,22 +1,43 @@
 package cat.itacademy.s04.t02.n01.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import cat.itacademy.s04.t02.n01.model.Fruita;
+import cat.itacademy.s04.t02.n01.services.FruitaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/fruita")
 public class FruitaController {
-    @GetMapping("/fruita/add")
-    public String saluda(@RequestParam(defaultValue = "UNKNOWN") String nom) {
-        return "Hola, " + nom + ". Estàs executant un projecte Maven";
+    @Autowired
+    private FruitaService service;
+
+    @PostMapping("/add")
+    public ResponseEntity<Fruita> addFruita(@RequestBody Fruita fruita) {
+        return ResponseEntity.ok(service.addFruita(fruita));
     }
 
-    @GetMapping(value = {"/HelloWorld2", "/HelloWorld2/{nom}"})
-    public String saluda2(@PathVariable(required = false) String nom) {
-        if (nom == null) {
-            nom = "UNKNOWN";
-        }
-        return "Hola, " + nom + ". Estàs executant un projecte Maven";
+    @PutMapping("/update")
+    public ResponseEntity<Fruita> updateFruita(@RequestBody Fruita fruita) {
+        return ResponseEntity.ok(service.updateFruita(fruita));
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteFruita(@PathVariable Long id) {
+        service.deleteFruita(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/getOne/{id}")
+    public ResponseEntity<Fruita> getOne(@PathVariable Long id) {
+        Fruita fruita = service.getOne(id);
+        return (fruita != null) ? ResponseEntity.ok(fruita) : ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/getAll")
+    public ResponseEntity<List<Fruita>> getAll() {
+        return ResponseEntity.ok(service.getAll());
     }
 }
