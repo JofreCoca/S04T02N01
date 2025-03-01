@@ -11,27 +11,28 @@ import java.util.List;
 @RestController
 @RequestMapping("/fruita")
 public class FruitaController {
+
     @Autowired
     private FruitaService service;
 
     @PostMapping("/add")
-    public ResponseEntity<Fruita> addFruita(@RequestBody Fruita fruita) {
-        return ResponseEntity.ok(service.addFruita(fruita));
+    public ResponseEntity<Fruita> add(@RequestBody Fruita fruita) {
+        return ResponseEntity.ok(service.add(fruita));
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Fruita> updateFruita(@RequestBody Fruita fruita) {
-        return ResponseEntity.ok(service.updateFruita(fruita));
+    public ResponseEntity<Fruita> update(@RequestBody Fruita fruita) {
+        return ResponseEntity.ok(service.update(fruita));
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteFruita(@PathVariable Long id) {
-        service.deleteFruita(id);
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+        service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/getOne/{id}")
-    public ResponseEntity<Fruita> getOne(@PathVariable Long id) {
+    public ResponseEntity<Fruita> getOne(@PathVariable Integer id) {
         Fruita fruita = service.getOne(id);
         return (fruita != null) ? ResponseEntity.ok(fruita) : ResponseEntity.notFound().build();
     }

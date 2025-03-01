@@ -1,9 +1,18 @@
 package cat.itacademy.s04.t02.n01.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Fruita {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String nom;
     int quantitatQuilos;
+
     public Fruita(int id, String nom, int quantitatQuilos) {
         this.id = id;
         this.nom = nom;
