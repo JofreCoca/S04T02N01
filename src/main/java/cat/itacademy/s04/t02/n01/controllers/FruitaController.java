@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/fruita")
@@ -26,13 +27,13 @@ public class FruitaController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable int id) {
         service.delete(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/getOne/{id}")
-    public ResponseEntity<Fruita> getOne(@PathVariable Integer id) {
+    public ResponseEntity<Fruita> getOne(@PathVariable int id) {
         Fruita fruita = service.getOne(id);
         return (fruita != null) ? ResponseEntity.ok(fruita) : ResponseEntity.notFound().build();
     }

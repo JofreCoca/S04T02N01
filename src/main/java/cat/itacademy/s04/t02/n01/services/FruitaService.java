@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FruitaService {
@@ -35,7 +36,7 @@ public class FruitaService {
         if (id == 0 || !repository.existsById(id)) {
             throw new IllegalArgumentException("The id is null or the fruit no exist");
         }
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).get();
     }
 
     public List<Fruita> getAll() {

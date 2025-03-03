@@ -13,12 +13,6 @@ public class Fruita {
     String nom;
     int quantitatQuilos;
 
-    public Fruita(int id, String nom, int quantitatQuilos) {
-        this.id = id;
-        this.nom = nom;
-        this.quantitatQuilos = quantitatQuilos;
-    }
-
     public int getId() {
         return id;
     }
