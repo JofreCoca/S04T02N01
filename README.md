@@ -56,10 +56,12 @@ Instal·lació
 
 Postman
 
-Execució Nothing
+enllaços
 
-Desplegament Nothing
+https://web.postman.co/home#
 
--Contribucions
+https://www.youtube.com/watch?v=qsejysrhJiU&list=PL_9MDdjVuFjHy1n4VCHPu9Wkdsl-oiksx
 
-Nothing
+https://docs.spring.io/spring-boot/reference/actuator/endpoints.html
+
+https://chatgpt.com
