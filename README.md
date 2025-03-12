@@ -7,7 +7,9 @@ Aquesta tasca consisteix en la creació d’una API RESTful que implementi opera
 # Fases de l’exercici:
 
 -Creació del projecte Spring Boot
--Accedir a Spring Initializr i generar un projecte amb les següents característiques:
+
+-Accedir a Spring Initializr i generar un projecte
+
 -Gestor de dependències: Maven o Gradle
 -Definició de l'entitat Fruita
 -Crear una classe Fruita
