@@ -11,16 +11,19 @@ Aquesta tasca consisteix en la creació d’una API RESTful que implementi opera
 -Accedir a Spring Initializr i generar un projecte
 
 -Gestor de dependències: Maven o Gradle
+
 -Definició de l'entitat Fruita
+
 -Crear una classe Fruita
--Persistir aquesta entitat en H2 utilitzant Spring Data JPA.
+
+-Persistir aquesta entitat en H2 utilitzant Spring Data JPA
+
 -Estructura de packages MVC
--Seguint el patró Model-View-Controller (MVC), es crearan els següents packages:
--controllers → Per gestionar les peticions HTTP.
--model → Contindrà la classe Fruita.
--services → Per gestionar la lògica de negoci.
--repository → Per comunicar-se amb la base de dades.
--exception → Per gestionar errors personalitzats.
+
+-Seguint el patró Model-View-Controller (MVC)
+
+-controllers → Per gestionar les peticions HTTP
+
 -Implementació del CRUD a FruitaController
 
 Aquest exercici permetrà consolidar coneixements en Spring Boot, bases de dades H2, el patró MVC, i les operacions CRUD utilitzant Spring Data JPA.
