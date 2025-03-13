@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Fruita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int id;
+    private int id;
     private String nom;
     private  int quantitatQuilos;
 
